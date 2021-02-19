@@ -1,6 +1,6 @@
 # Nigerian Phone Number Validator
 
-[![CircleCI](https://circleci.com/gh/shaolinmkz/nigeria-phone-number-validator/tree/master.svg?style=svg)](https://circleci.com/gh/shaolinmkz/nigeria-phone-number-validator/tree/master) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![NPM](https://img.shields.io/npm/v/nigeria-phone-number-validator.svg)](https://www.npmjs.com/package/nigeria-phone-number-validator) [![Total Download](https://img.shields.io/npm/dt/nigeria-phone-number-validator.svg)](https://www.npmjs.com/package/nigeria-phone-number-validator)
+[![CircleCI](https://circleci.com/gh/shaolinmkz/nigeria-phone-number-validator.svg?style=svg&circle-token=ba1736a4c7900623196486e65a8dabf80414efc8)](https://circleci.com/gh/shaolinmkz/nigeria-phone-number-validator) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![NPM](https://img.shields.io/npm/v/nigeria-phone-number-validator.svg)](https://www.npmjs.com/package/nigeria-phone-number-validator) [![Total Download](https://img.shields.io/npm/dt/nigeria-phone-number-validator.svg)](https://www.npmjs.com/package/nigeria-phone-number-validator)
 
 A simple function that validates and returns common Nigerian Telco numbers.
 
