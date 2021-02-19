@@ -1,10 +1,62 @@
+import telcos from './telcos';
+
+interface Telco {
+  prefix: string,
+  name: string,
+}
+
 /**
- * @function sum
- * @description Add two numbers
+ * @function validatePhoneNumberSync
+ * @description Validates a number synchronously
+ * @returns {object} - returns a result construct
  */
-const sum = (num1: number, num2: number): number | string => {
-        if(isNaN(num1) || isNaN(num2) || !num1 || !num2 || typeof num1 === 'string' || typeof num2 === 'string') return 'Provide a number as a argument';
-        return num1 + num2;
+export const validatePhoneNumberSync = (phoneNumber: string) => {
+
+  const errors = [];
+
+  const telcoType = telcos.find((telco: Telco) => telco.prefix === `${phoneNumber}`.slice(0, telco.prefix.length));
+  const isValidLength = `${phoneNumber}`.length === 11;
+  const isNumber = /^[0-9]*$/.test(phoneNumber);
+
+  if (!telcoType) {
+    errors.push('Phone number doesn\'t match a valid service provider')
+  }
+
+  if (!isValidLength) {
+    errors.push('Phone number should be 11 characters long')
+  }
+
+  if (!isNumber) {
+    errors.push('Invalid number character detected')
+  }
+
+  const allChecksPass = [!!telcoType, isNumber, isValidLength].every(val => val === true);
+
+  const errorConstruct = {
+    errors,
+    isValid: false,
   };
 
-export default sum;
+  const successConstruct = {
+    telco: telcoType?.name,
+    isValid: true,
+  };
+
+  return allChecksPass ? successConstruct : errorConstruct;
+};
+
+/**
+ * @function validatePhoneNumberAsync
+ * @description validates a number asynchronously
+ * @returns {void}
+ */
+export const validatePhoneNumberAsync = (phoneNumber: string) => {
+  return new Promise((resolve, reject) => {
+    const result = validatePhoneNumberSync(phoneNumber);
+    if (result.isValid) {
+      resolve(result);
+    } else {
+      reject(result);
+    }
+  })
+};
