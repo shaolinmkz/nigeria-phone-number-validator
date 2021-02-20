@@ -6,8 +6,15 @@ A simple function that validates and returns common Nigerian Telco numbers.
 
 # Installation
 
-```bash
+```sh
 npm install nigeria-phone-number-validator
+```
+
+# OR
+
+```html
+<!-- Place script tag in root (CDN) -->
+<script defer src="https://bundle.run/nigeria-phone-number-validator@1.0.0"></script>
 ```
 
 # Usage
@@ -52,4 +59,26 @@ try {
 } catch (error) {
 	// react to error
 }
+```
+
+# CDN USAGE
+
+```js
+// The methods are attached to the windows object
+window
+.nigeriaPhoneNumberValidator
+.validatePhoneNumberAsync("08033445673").then((result) => {
+	console.log(result);
+	// { telco: "MTN", isValid: true }
+});
+
+window
+.nigeriaPhoneNumberValidator
+.validatePhoneNumberAsync("02033445673").catch((result) => {
+	console.log(result);
+	//   {
+	//     errors: [ "Phone number doesn't match a valid service provider" ],
+	//     isValid: false,
+	//   }
+});
 ```
