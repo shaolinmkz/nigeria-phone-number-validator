@@ -35,13 +35,15 @@ const telcos = [
 	{ prefix: "0908", name: "9MOBILE" },
 	{ prefix: "0901", name: "AIRTEL" },
 	{ prefix: "0902", name: "AIRTEL" },
+	{ prefix: "0912", name: "AIRTEL" },
 	{ prefix: "0903", name: "MTN" },
 	{ prefix: "0904", name: "AIRTEL" },
 	{ prefix: "0905", name: "GLO" },
 	{ prefix: "0906", name: "MTN" },
 	{ prefix: "0907", name: "AIRTEL" },
 	{ prefix: "0915", name: "GLO" },
-	{ prefix: "0913", name: "MTN" }
+	{ prefix: "0913", name: "MTN" },
+	{ prefix: "0916", name: "MTN" },
   ];
 
 export default telcos;

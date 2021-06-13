@@ -5,14 +5,26 @@ interface Telco {
   name: string,
 }
 
+const removeCountryCode = (phoneNumber: string) => {
+  if (`${phoneNumber}`.slice(0, 3) === "234") {
+    phoneNumber = `0${phoneNumber.slice(3)}`;
+  } else if (`${phoneNumber}`.slice(0, 4) === "+234") {
+    phoneNumber = `0${phoneNumber.slice(4)}`;
+  }
+  return phoneNumber
+}
+
 /**
  * @function validatePhoneNumberSync
  * @description Validates a number synchronously
  * @returns {object} - returns a result construct
  */
-export const validatePhoneNumberSync = (phoneNumber: string) => {
+export const validatePhoneNumberSync = <T> (phoneNumber: string) => {
 
   const errors = [];
+
+  phoneNumber = removeCountryCode(phoneNumber);
+  
 
   const telcoType = telcos.find((telco: Telco) => telco.prefix === `${phoneNumber}`.slice(0, telco.prefix.length));
   const isValidLength = `${phoneNumber}`.length === 11;
