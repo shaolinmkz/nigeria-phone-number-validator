@@ -19,7 +19,7 @@ const removeCountryCode = (phoneNumber: string) => {
  * @description Validates a number synchronously
  * @returns {object} - returns a result construct
  */
-export const validatePhoneNumberSync = <T> (phoneNumber: string) => {
+export const validatePhoneNumberSync = (phoneNumber: string) => {
 
   const errors = [];
 
