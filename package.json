@@ -1,6 +1,6 @@
 {
   "name": "nigeria-phone-number-validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Nigerian phone number validator",
   "main": "lib/index.js",
   "types": "lib",
